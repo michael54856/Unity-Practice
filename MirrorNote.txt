@@ -1,0 +1,17 @@
+[command] -> 呼叫後會讓server去執行 , call by client run on server
+[ClientRpc] ->呼叫後會讓所有client執行 , call by server run on all client (哪個物件變動,全部client的那個物件變動)
+[TragetRpc] -> 會回傳資料給特定的連線 , call by server run on specific client
+[syncVar] -> server更動後,其他client也會變動 
+
+[client] -> 客戶端執行
+[server] -> server端執行
+
+isServer->這個物件是否在server端,並不代表server所有
+
+OnStartServer : server建立時呼叫 (call on server)
+OnStartClient : 連線時call on該client
+
+OnClientConnect : 連線時call on該client
+OnServerConnect:有連線時call server
+
+NetworkServer.Spawn()出來的物件只能呼叫ClientRPC,無法呼叫Command,Command要由player呼叫
